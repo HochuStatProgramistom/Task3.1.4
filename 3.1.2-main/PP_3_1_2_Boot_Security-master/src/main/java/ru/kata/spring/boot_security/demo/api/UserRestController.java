@@ -19,9 +19,4 @@ public class UserRestController {
     public User getUser(Principal principal) {
         return userService.getPerson(principal.getName());
     }
-
-    @GetMapping("/api/user/{email}")
-    public ResponseEntity<User> getUserById(@PathVariable String email) {
-        return ResponseEntity.ok(userService.findByEmail(email));
-    }
 }
